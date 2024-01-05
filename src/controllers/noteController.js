@@ -27,14 +27,11 @@ exports.createNote = async (req, res) => {
 
 exports.getAllNotes = async (req, res) => {
   try {
-    // Find notes owned by the authenticated user
     const userNotes = await noteModel.find({ user: req.userId });
 
-    // Find shared notes using the Share model
     const sharedNotes = await shareModel
       .find({ sharedUser: req.userId })
       .populate("note");
-
 
     res.status(200).json({
       staus: "success",
@@ -46,7 +43,6 @@ exports.getAllNotes = async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
-
 
 exports.getNoteById = async (req, res) => {
   try {
@@ -150,8 +146,6 @@ exports.shareNote = async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
-
-//search notes
 
 exports.searchNotes = async (req, res) => {
   try {
