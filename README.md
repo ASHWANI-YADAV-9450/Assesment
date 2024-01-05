@@ -28,7 +28,7 @@
 5. **Testing the API:**
 
     - Import the provided Postman collection (`Assesment.postman_collection`) into Postman.
-    - Configure environment variables, including the `Authorization` header with the value `Bearer <your_access_token>`.
+    - Configure environment variables, including the `Authorization` header with the value `<your_access_token>`.
     - Use the collection to test various API endpoints.
 
 6. **Information about shareNotes API:**
